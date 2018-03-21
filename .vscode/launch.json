@@ -1,0 +1,16 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Debug Unit Tests",
+			"type": "coreclr",
+			"request": "launch",
+			"preLaunchTask": "Build Solution",
+			"program": "dotnet",
+			"args": [ "${workspaceRoot}/Native.Cli/bin/Debug/netcoreapp2.0/Native.Cli.dll" ],
+			"console": "internalConsole",
+			"stopAtEntry": false,
+			"internalConsoleOptions": "openOnSessionStart"
+		}
+	]
+}
