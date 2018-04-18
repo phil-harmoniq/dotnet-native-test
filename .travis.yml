@@ -1,0 +1,14 @@
+dist: trusty
+language: csharp
+mono: none
+dotnet: 2.1.4
+
+before_script:
+- "ls -lhaF"
+
+script:
+- "dotnet publish -c release -r linux-x64 -o out"
+
+after_script:
+- "cd out"
+- "ls -lhaF"
