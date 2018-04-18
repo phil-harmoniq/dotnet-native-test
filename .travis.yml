@@ -4,11 +4,13 @@ mono: none
 dotnet: 2.1.4
 
 before_script:
-- "ls -lhaF"
+- 'ls -lhaF'
+- 'echo "deb http://llvm.org/apt/trusty/ llvm-toolchain-trusty-3.9 main" | sudo tee /etc/apt/sources.list.d/llvm.list'
+- 'wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key | sudo apt-key add -'
+- 'sudo apt-get update'
+- 'sudo apt-get install cmake clang-3.9 libicu52 libunwind8 uuid-dev libcurl4-openssl-dev zlib1g-dev libkrb5-dev'
 
 script:
-- "dotnet publish -c release -r linux-x64 -o out"
-
-after_script:
-- "cd out"
-- "ls -lhaF"
+- 'dotnet publish -c release -r linux-x64 -o out'
+- 'cd out'
+- 'ls -lhaF'
